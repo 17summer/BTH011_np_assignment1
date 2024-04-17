@@ -127,7 +127,7 @@ int main(int argc, char *argv[]){
   	sprintf(Desthost, "%s:%s",Desthost, splits[i]);
   }
   port=atoi(Destport);
-  printf("Host %s and port %d.\n",Desthost,port);
+  //printf("Host %s and port %d.\n",Desthost,port);
 	
 	//Getaddrinfo
 	struct addrinfo hints, *serverinfo = 0;
@@ -155,11 +155,11 @@ int main(int argc, char *argv[]){
   else printf("Socket Created\n");
   #endif
   
-  
+/* 
 #ifdef DEBUG 
   printf("Host %s, and Port %d.\n",Desthost,port);
 #endif
-
+*/
   //Create Socket Structure
   server_addr.sin_family = AF_INET;
   server_addr.sin_port = htons(port);
@@ -201,7 +201,7 @@ int main(int argc, char *argv[]){
 
 	//sleep(6);
   //Recieve the problem
-  printf("We are here\n");
+  //printf("We are here\n");
   recieveMessage(socket_desc, server_message, sizeof(server_message));
   
   if(strcmp(server_message, "ERROR TO\n") == 0){
